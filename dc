@@ -1,0 +1,71 @@
+src 里边存的是源文件（.java），就是人能看懂的文件，都是程序员写好的源代码
+bin 里边存的是字节码文件（.class），就是编译后的文件，让机器看的
+两个文件夹里的文件名是对应的。
+
+final 将变量定义为常量
+
+String 引用类型
+
+var关键字（
+有些时候，类型的名字太长，写起来比较麻烦。例如：
+StringBuilder sb = new StringBuilder();
+这个时候，如果想省略变量类型，可以使用var关键字：
+var sb = new StringBuilder();
+编译器会根据赋值语句自动推断出变量sb的类型是StringBuilder。对编译器来说，语句：
+var sb = new StringBuilder();
+实际上会自动变成：
+StringBuilder sb = new StringBuilder();
+因此，使用var定义变量，仅仅是少写了变量类型而已。）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
