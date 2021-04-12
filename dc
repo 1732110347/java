@@ -28,6 +28,8 @@ StringBuilder sb = new StringBuilder();
 length 数组的元素个数称为数组的长度。对于一维数组“数组名.length"的值就是数组中元素个数。
 二维 是含有一维的个数。
 
+println是print line的缩写，表示输出并换行。因此，如果输出后不想换行，可以用print()：
+如果要把数据显示成我们期望的格式，就需要使用格式化输出的功能。格式化输出使用System.out.printf()，通过使用占位符%?，printf()可以把后面的参数格式化成指定格式：
 
 
 
