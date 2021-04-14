@@ -36,10 +36,7 @@ println是print line的缩写，表示输出并换行。因此，如果输出后
 nextLine() / nextInt() / nextDouble() / ...
 读取 一整行   返回int型
 
-
-
-
-import语句导入java.util.Scanner，import是导入某个类的语句，必须放到Java源代码的开头，后面我们在Java的package中会详细讲解如何使用import。
+import语句导入java.util.Scanner，import(导入）是导入某个类的语句（java里的util包中的scanner类），必须放到Java源代码的开头，后面我们在Java的package中会详细讲解如何使用import。
 
 System.out代表标准输出流
 System.in代表标准输入流。直接使用System.in读取用户输入虽然是可以的，但需要更复杂的代码，而通过Scanner就可以简化后续的代码。
