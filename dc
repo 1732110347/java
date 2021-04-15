@@ -43,6 +43,7 @@ System.in代表标准输入流。直接使用System.in读取用户输入虽然�
 
 scanner.nextLine()，要读取用户输入的整数，使用scanner.nextInt()。Scanner会自动转换数据类型，因此不必手动转换。
 
+xx.equals（String xx）比较当前对象是否字符序列相同，忽略大小写。
 
 
 
