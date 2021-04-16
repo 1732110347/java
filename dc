@@ -9,10 +9,12 @@ final 将变量定义为常量
 String 引用类型
 Java中的string是字符串的意思，当声明了一个字符串变量时，便可以在里面存储数据。
 1）String类是final类，也即意味着String类不能被继承，并且它的成员方法都默认为final方法。
-
 在Java中，被final修饰的类是不允许被继承的，并且该类中的成员方法都默认为final方法。
-
 2）上面列举出了String类中所有的成员属性，从上面可以看出String类其实是通过char数组来保存字符串的。
+如果赋值号的右边是两个常量则为常量，若有一个变量则为变量相当于new String("")
+
+
+
 
 var关键字（
 有些时候，类型的名字太长，写起来比较麻烦。例如：
@@ -25,7 +27,9 @@ var sb = new StringBuilder();
 StringBuilder sb = new StringBuilder();
 因此，使用var定义变量，仅仅是少写了变量类型而已。）
 
-length 数组的元素个数称为数组的长度。对于一维数组“数组名.length"的值就是数组中元素个数。
+public int length()
+获取一个字符串的长度（字符个数） 
+length 数组的元素个数称为数组的长度。对于一维数组“xxx.length"的值就是数组中元素个数。
 二维 是含有一维的个数。
 
 println是print line的缩写，表示输出并换行。因此，如果输出后不想换行，可以用print()：
@@ -43,12 +47,29 @@ System.in代表标准输入流。直接使用System.in读取用户输入虽然�
 
 scanner.nextLine()，要读取用户输入的整数，使用scanner.nextInt()。Scanner会自动转换数据类型，因此不必手动转换。
 
+public boolean equals(String s)
 xx.equals（String xx）比较当前对象是否字符序列相同，忽略大小写。
+String s1 = new String("天道酬勤");
+String s2 = new String("天道酬勤");
+System.out.println(s1.equals(s2)); true
 
+public boolean startsWith(String s)    public boolean endsWith(String s)
+判断当前String对象的字符序列前缀/后缀是否是参数s指定的字符串对象中的字符序列。
+String tom = "天气预报，阴有小雨", jerry = "比赛结果，中国队赢得胜利";
+    tom.startsWith("天气");
+    tom.endsWith(“大雨”);   jerry.endswith("胜利");
 
+public int compareTo(String s)
+调用该方法的对象，按字典序，与参数s指定的对象中的字符序列比较大小。
+String str = "abcde"; 
+str.compareTo("boy"); //将str的字符序列"abcde"与"boy" 比较
+ 如果当前String对象的字符序列与s的相同，该方法返回值0，如果大于s的字符序列，该方法返回正值；如果小于s的字符序列，该方法返回负值。
+int result1 = str.compareTo("boy");    //结果为？   a-b=-1
+System.out.println(str.compareTo("boy"));
+编写sort方法将一个String数组中的String对象按字典序排序。
 
-
-
+相关方法：public int compareToIgnoreCase(String s)
+比较时忽略大小写
 
 
 
