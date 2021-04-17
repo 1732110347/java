@@ -99,8 +99,8 @@ String s2 = tom.substring(1, 6);//tuden
 String tom=" an apple  ";
 String s3 = tom.trim();//an apple
 
-
-
+sort 方法为泡沫法
+  utile包值哦你Arrays调用sort方法  Arrays.sort(xx);
 
 
 

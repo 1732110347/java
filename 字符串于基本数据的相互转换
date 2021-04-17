@@ -1,0 +1,5 @@
+String s="3";
+x = Integer.parseInt(s);
+x=Double.parseDouble(s)
+
+String str1 = String.valueOf(123.9 + 23);
