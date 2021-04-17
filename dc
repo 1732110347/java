@@ -102,12 +102,24 @@ String s3 = tom.trim();//an apple
 sort 方法为泡沫法
   utile包值哦你Arrays调用sort方法  Arrays.sort(xx);
 
+toCharArray() 方法将字符串转换为字符数组
+ String Str = new String("www.runoob.com");
 
+        System.out.print("返回值 :" );
+        System.out.println( Str.toCharArray() );
+    }
+}
+以上程序执行结果为：
+返回值 :www.runoob.com
 
-
-
-
-
+getChars() 方法将字符从字符串复制到目标字符数组
+srcBegin -- 字符串中要复制的第一个字符的索引。
+srcEnd -- 字符串中要复制的最后一个字符之后的索引。最后一个是减一位置上的
+dst -- 目标数组。
+dstBegin -- 目标数组中的起始偏移量。
+  String s="1945年8月15日是抗战胜利日";
+      a=new char[4];
+      s.getChars(11,15,a,0);结果。抗战胜利
 
 
 
