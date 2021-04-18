@@ -112,17 +112,27 @@ toCharArray() 方法将字符串转换为字符数组
 以上程序执行结果为：
 返回值 :www.runoob.com
 
-getChars() 方法将字符从字符串复制到目标字符数组
-srcBegin -- 字符串中要复制的第一个字符的索引。
-srcEnd -- 字符串中要复制的最后一个字符之后的索引。最后一个是减一位置上的
+getChars() 方法将字符从字符串复制到目标字符数组 
+srcBegin -- 字符串中要复制的第一个字符的索引。  （开始，）
+srcEnd -- 字符串中要复制的最后一个字符之后的索引。最后一个是减一位置上的（结束）
 dst -- 目标数组。
 dstBegin -- 目标数组中的起始偏移量。
   String s="1945年8月15日是抗战胜利日";
       a=new char[4];
       s.getChars(11,15,a,0);结果。抗战胜利
 
+toCharArray() 方法将字符串转换为字符数组。
+  c="十一长假期间，学校都放假了".toCharArray();
+	      for(int i=0;i<c.length;i++)
+	        System.out.print(c[i]);
 
-
+getBytes（）一个字为两个字符  先数组 然后开始和结束
+  byte d[]="Java你好".getBytes(); 
+       System.out.println("数组d的长度是:"+d.length);
+       String s=new String(d,6,2); //输出：好
+       System.out.println(s);
+       s=new String(d,0,6);
+       System.out.println(s);   //输出：Java你
 
 
 
