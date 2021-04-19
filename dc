@@ -144,11 +144,18 @@ toString() 方法用于返回以一个字符串表示的 Number 对象值。
 Date date = new Date();返回现在时间
        System.out.println(date.toString());
 
-
-
-
-
-
+matches() 方法用于检测字符串是否匹配给定的正则表达式。
+调用此方法的 xxx小.matches(regex（xx）) 形式与以下表达式产生的结果完全相同：
+Pattern.matches(xxx小, xx大)
+import java.util.regex.Pattern;
+String content = "I am noob " +
+        "from runoob.com.";
+      String pattern = ".*runoob.*"; 
+      boolean isMatch = Pattern.matches(pattern, content);
+  
+   String regex = "[a-zA-Z|0-9|_]+"; 
+    String c="ada";   
+      if(c.matches(regex)) {
 
 
 
