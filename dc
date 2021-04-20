@@ -89,7 +89,6 @@ tom.lastIndexOf("a");//值是13
 由当前String对象的字符序列中，startpoint位置到最后的字符所得到的字符序列组成的一个新的字符串对象。
 String tom="student";
 System.out.println(tom.substring(1);//tudent
-
 substring(int start, int end)
  由当前String对象的字符序列中，start位置至end–1位置上的字符组成的新的字符串对象。
 String s2 = tom.substring(1, 6);//tuden
@@ -102,15 +101,6 @@ String s3 = tom.trim();//an apple
 sort 方法为泡沫法
   utile包值哦你Arrays调用sort方法  Arrays.sort(xx);
 
-toCharArray() 方法将字符串转换为字符数组
- String Str = new String("www.runoob.com");
-
-        System.out.print("返回值 :" );
-        System.out.println( Str.toCharArray() );
-    }
-}
-以上程序执行结果为：
-返回值 :www.runoob.com
 
 getChars() 方法将字符从字符串复制到目标字符数组 
 srcBegin -- 字符串中要复制的第一个字符的索引。  （开始，）
@@ -121,18 +111,21 @@ dstBegin -- 目标数组中的起始偏移量。
       a=new char[4];
       s.getChars(11,15,a,0);结果。抗战胜利
 
+
 toCharArray() 方法将字符串转换为字符数组。
   c="十一长假期间，学校都放假了".toCharArray();
 	      for(int i=0;i<c.length;i++)
 	        System.out.print(c[i]);
 
-getBytes（）一个字为两个字符  先数组 然后开始和结束
+
+getBytes（）（ 输出固定位置       （一个字为两个字符  先数组 然后开始和结束
   byte d[]="Java你好".getBytes(); 
        System.out.println("数组d的长度是:"+d.length);
        String s=new String(d,6,2); //输出：好
        System.out.println(s);
        s=new String(d,0,6);
        System.out.println(s);   //输出：Java你
+
 
 toString() 方法用于返回以一个字符串表示的 Number 对象值。
 如果方法使用了原生的数据类型作为参数，返回原生数据类型的 String 对象值。
@@ -141,12 +134,15 @@ toString() 方法用于返回以一个字符串表示的 Number 对象值。
         System.out.println(x.toString());  5
         System.out.println(Integer.toString(12)); 12
 
+
 Date date = new Date();返回现在时间
        System.out.println(date.toString());
+
 
 matches() 方法用于检测字符串是否匹配给定的正则表达式。
 调用此方法的 xxx小.matches(regex（xx）) 形式与以下表达式产生的结果完全相同：
 Pattern.matches(xxx小, xx大)
+
 import java.util.regex.Pattern;
 String content = "I am noob " +
         "from runoob.com.";
@@ -167,6 +163,7 @@ String url = “我叫%s,今年%s岁。”;
 String name = “阳阳”;
 url = String.format(url,name);
 
+替换ArrayList  add  replaceAll
 import java.util.ArrayList;
 ArrayList add() 方法插入元素
         //创建一个数组
@@ -183,8 +180,26 @@ replaceAll
 String str = "12hello567bird".replaceAll("[a-zA-Z]+", "你好")；
 12你好567你好
 
+3、字符串的分解：
+public String[] split(String regex)
+返回一个字符数组，数组里面的内容：用参数regex指定的正则表达式作为分隔标记，将当前字符串对象中的字符序列分隔成的部分。
+不改变当前的字符串对象的字符序列。
+如果当前字符串对象的前缀满足regex指定的规则，则会认为前缀前面不含任何字符的字符序列： ""是数组的第一个元素。
+
+ String reader="12adad sada";     
+  //regex匹配由空格、数字和!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~组成的字符序列
+      String s = "[\\s\\d\\p{Punct}]+"; 
+     String c[]=  reader.split(s); 
+     for(int i=0;i<c.length;i++){
+         int m = i+1;
+         System.out.println(c[i]); 空 adad sada
 
 
+java字符串数字与数字的转换
+1：字符串数字转数字
+假设给定一个字符串，String str="1234";要转为转数字可以这样：int  a=Integer.valueOf(str);
+2.数字转字符串数字
+假设给定一数字，int a=1234；可以这样：String str=a+"";或者String str=String.valueOf(a);
 
 
 
