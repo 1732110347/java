@@ -158,6 +158,60 @@ String content = "I am noob " +
       if(c.matches(regex)) {
 
 
+%s使用%s占位
+String str = "I am noob ";		 
+		System.out.printf("%s",str);
+
+使用String.format转换
+String url = “我叫%s,今年%s岁。”;
+String name = “阳阳”;
+url = String.format(url,name);
+
+import java.util.ArrayList;
+ArrayList add() 方法插入元素
+        //创建一个数组
+        ArrayList<xx> primeNumbers = new ArrayList();xxx类型String Integer
+        // 往数组插入元素
+        primeNumbers.add(2);
+        primeNumbers.add(3);
+        primeNumbers.add(5);
+        System.out.println("ArrayList: " + primeNumbers);
+ primeNumbers.replaceAll(e ->  e*2);   替换
+	        System.out.println("更新后的 ArrayList: " + primeNumbers);
+
+replaceAll
+String str = "12hello567bird".replaceAll("[a-zA-Z]+", "你好")；
+12你好567你好
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
