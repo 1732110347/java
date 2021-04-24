@@ -1,0 +1,17 @@
+方法	功能说明
+public void addActionListener(ActionListener l)	将一个 ActionListener 添加到按钮中
+public void addChangeListener(ChangeListener l)	向按钮添加一个 ChangeListener
+public void addItemListener(ItemListener l)	将一个 ItemListener 添加到复选框中
+public int getHorizontalAlignment()	返回图标和文本的水平对齐方式
+public int getHorizontalTextPosition()	返回文本相对于图标的横向位置
+public int getVerticalAlignment()	返回文本和图标的垂直对齐方式
+public int getVerticalTextPosition()	返回文本相对于图标的纵向位置
+public Icon getIcon()	返回默认图标
+public void setIcon(Icon defaultIcon)	设置按钮的默认图标
+public int getMnemonic()	返回当前模型中的键盘助记符
+public void setMnemonic(int mnemonic)	设置按钮的助记符
+public void setActionCommand(String actionCommand)	设置此按钮的动作命令
+public String getText()	返回按钮的文本
+public void setText(String text)	设置按钮的文本
+public boolean isSelected()	返回按钮的状态
+public void setEnabled(boolean b)	启用（或禁用）按钮

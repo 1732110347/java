@@ -1,0 +1,201 @@
+常用非容器组件：都是JComponent的子类
+1  JLabel标签组件 提供提示信息
+    为GUI提供文本(主要)或图像(也可以)信息
+    JComponent的子类
+    可以显示以下内容:
+    （1）单行的只读的文本信息
+    （2）图像
+    （3）同时显示文本与图像信息
+
+2  JTextField文本框 在文本框输入单行文字
+显示单行的文本信息
+继承关系：JTextField extends JTextComponent
+密码输入框：JPasswordField
+
+3    JTextArea文本区 允许用户在文本区输入多行文字
+是一个显示纯文本的多行区域。
+JTextArea 不管理滚动,可把它放置在 JScrollPane 的ViewPort中实现滚动.
+如：JTextArea textArea = new JTextArea();
+       JScrollPane area = new JScrollPane(textArea);
+TextArea 具有换行能力，JTextArea默认为不换行，需设置换行策略，
+如： textArea.setLineWrap(true);
+         textArea.setWrapStyleWord(true);
+
+4    JButton按钮组件 点击按钮
+按钮是窗口程序设计中最常用的组件之一，按钮可以带标签或图像。
+通常一个按钮对应着一种特定的操作，如确定、保存、取消等。从而用户可以用鼠标单击它来控制程序运行的流程。
+javax.swing类库中提供了JButton类，用来处理按钮控件的相关操作。
+JButton类继承了AbstractButton类中许多常用方法。
+
+
+5    JCheckBox复选框 提供多项选择，复选框的右面有个名字，并提供两个状态，一种选中，另一种是未选中，单击切换
+给用户“二选一”的输入选择
+每个复选框有两种状态：“选中（on）”或“非选中（off）” 
+
+6    JRadioButton单选框 单选按钮 
+给用户“多选一”的输入选择。
+每个单选框有两种状态：被选择或取消选择。
+单选框还必须配合ButtonGroup类将其组成单选按钮组来使用（用ButtonGroup的 add 方法将 JRadioButton 对象包含在此组中），在这种情况下用ButtonGroup类管辖的所有的JRadioButton组件中，只能有一个处于被选择状态。
+
+7    JList列表框组件 
+向用户提供“多选”的输入选择，列表框通常列出若干选项，可指定列出选项的数目，超过长度时被折叠起来。
+列表框中提供了多个文本选项，可以浏览多项。
+列表框组件的使用：
+先用JList类的add()方法将选项加入到列表框中，
+然后再利用程序来控制列表框的显示方式。
+
+JList构造方法：
+public JList() : 使用空模型构造 JList
+public JList(ListModel dataModel) :构造一个列表，用它显示指定模型中的元素。 
+public JList (Object [] listData) :构造一个列表以显示指定数组listData的元素。 
+JList 不支持滚动。要启用滚动，可使用JScrollPane面板。
+可以使用如下方法，设置可以同时选择几个选项：
+setSelectionMode(ListSelectionModel.SINGLE_SELECTION );//单选
+setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION );//多选
+
+JList-单选示例：
+String colorNames[] ={ “Black”, “Blue”, “Cyan”, “Dark Gray”, “Gray“};
+colorList = new JList( colorNames );
+colorList.setVisibleRowCount( 5 );
+colorList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION );
+colorList.getSelectedIndex() ;//获取选中元素的索引
+colorList.getSelectedValue() ;//获取选中元素的值
+
+JList-多选示例：
+String colorNames[] ={ “Black”, “Blue”, “Cyan”, “Dark Gray”, “Gray“};
+JList  colorList = new JList( colorNames );
+colorList.setVisibleRowCount( 5 );
+ colorList.setFixedCellHeight( 15 );
+colorList.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION );
+colorList.getSelectedValues()；//获取选中所有元素的值
+
+
+8   JComboBox下拉列表框组件 提供单项选择。可以在下拉列表中看到第一个选项和它旁边的箭头按钮，点击箭头按钮时，列表打开
+下拉列表框中所有选项都被折叠收藏起来，且只会将用户所选择的单个选项显示在显示栏上。
+要改变被选中的选项，可以单击下拉列表框右边的向下箭头，然后从伸展开的选项框中选择一个选项即可。
+
+JComboBox类的常用方法
+方法	功能说明
+public void addActionListener(ActionListener l)	添加 ActionListener
+public void addItem(Object anObject)	为项列表添加项
+public void addItemListener(ItemListener aListener)	为该下拉列表框指定一个item事件监听者 
+public void addJPopupMenuListener(
+JPopupMenuListener l)	添加 JPopupMenu 侦听器，该侦听器将侦听来自组合框弹出部分的通知消息
+public Object getItemAt(int index)	返回指定索引处的列表项
+public int getItemCount()	返回列表中的项数
+public int getSelectedIndex()	返回列表中与给定项匹配的第一个选项
+public Object getSelectedItem()	返回下拉列表框中被选中项目的名称
+public void insertItemAt(Object anObject, int index)	在项列表中的给定索引处插入项
+public void removeAllItems()	从项列表中移除所有项
+public void removeItem(Object anObject)	从项列表中移除项
+public void removeItemAt(int anIndex)	移除 anIndex 处的项
+
+9    JMenu菜单组件 
+作用：用户用来输入有关操作命令的简便工具。
+形式：下拉方式或弹出方式
+菜单组件的组成：
+菜单条JMenuBar：包含若干个菜单 可以添加至顶层容器JFrame、JWindow。
+由多个 JMenu 组成，每个 JMenu 在 JMenubar 中都表示为字符串。
+
+菜单JMenu：包含若干个菜单项。在用户单击它时，则以弹出式菜单显示。
+菜单项JMenuItem：与按钮相似，在单击时引发一个动作命令。是JMenu 中的一个组件，以文本字符串形式显示，可以具有图标，外观可以修改，如字体、颜色、背景、边框等。
+
+JMenuBar mb = new JMenuBar();             //创建JMenuBar对象 mb
+JMenu mn1 = new JMenu("颜色");            //创建JMenu对象 mn1
+JMenu mn2 = new JMenu("窗口");            //创建JMenu对象 mn2
+JMenuItem mi1 = new JMenuItem("红色");    //创建JMenuItem对象 mi1
+JMenuItem mi2 = new JMenuItem("绿色");  
+JMenuItem mi3 = new JMenuItem("关闭");  
+JCheckBoxMenuItem cbmi = new JCheckBoxMenuItem("斜体");   //复选框菜单项
+mb.add(mn1);               //将mn1加入mb中
+mb.add(mn2);
+mn1.add(mi1);             //将mi1加入到mn1中
+mn1.add(mi2);
+mn1.addSeparator();       //加一分隔线
+mn1.add(cbmi);            //添加带复选框的菜单项
+mn2.add(mi3);             // 将mi3加入到mn2中
+
+JMenuBar类的构造方法
+构造方法	功能说明
+public JMenuBar()	创建菜单条对象
+
+JMenuBar类的常用方法
+方法	功能说明
+public JMenu add(JMenu m)	将JMenu对象m添加到菜单条JMenuBar中
+public JMenu getMenu(int i)	返回位置i的JMenu对象
+public int getMenuCount()	返回JMenuBar中JMenu对象的总数
+public void setHelpMenu(JMenu menu)	设置用户的帮助菜单
+
+JMenu类的构造方法
+构造方法	功能说明
+public JMenu()	创建菜单对象
+public JMenu(Action a) 	创建一个从提供的 Action 获取其属性的菜单
+public JMenu(String s) 	创建一个新 JMenu，用提供的字符串作为其文本
+public JMenu(String s, boolean b) 	创建一个新 JMenu，用提供的字符串作为其文本并指定其是否为分离式 (tear-off) 菜单
+
+JMenu类的常用方法
+方法	功能说明
+public JMenuItem add(JMenuItem mi)	添加JMenuItem对象mi到菜单JMenu中
+public void add(String label)	添加标题为label的JMenuItem到JMenu中
+public void addSeparator()	在当前位置增加一行分隔线
+public JMenuItem getItem(int index)	返回index位置的JMenuItem对象
+public int getItemCount()	返回JMenu中JMenuItem对象的总数
+public void insert(JMenuItem mi,int index)	在index位置上插入一个 JMenuItem对象mi
+public void insert(String label，int index)	在index位置插入标题为label的JMenuItem对象
+public void insertSeparator(int index)	在index位置插入一行分隔线
+public void remove(int index)	删除index位置上的JMenuItem对象
+public void remove(JMenuItem item)	从JMenu中删除指定的JMenuItem对象item
+public void removeAll()	在JMenu中删除所有的JMenuItem对象
+
+JMenuItem类的构造方法
+构造方法	功能说明
+public JMenuItem()	创建菜单项对象
+public JMenuItem(Action a) 	创建一个从指定的 Action 获取其属性的菜单项
+public JMenuItem(Icon icon) 	创建带有指定图标的 JMenuItem
+public JMenuItem(String text) 	创建带有指定文本的 JMenuItem
+public JMenuItem(String text, Icon icon) 	创建带有指定文本和图标的 JMenuItem
+public JMenuItem(String text, int mnemonic)	创建带有指定文本和键盘助记符的 JMenuItem
+
+JMenuItem类的常用方法
+方法	功能说明
+public void addMenuDragMouseListener
+(MenuDragMouseListener l)	将 MenuDragMouseListener 添加到菜单项
+public void addMenuKeyListener
+(MenuKeyListener l)	将 MenuKeyListener 添加到菜单项
+public String getJLabel()	返回JMenuItem的标题
+public void setEnabled(Boolean b)	设置JMenuItem是否可被使用
+ public void menuSelectionChanged
+(boolean isIncluded)	当选择或取消选择 MenuElement 时由 MenuSelectionManager 调用
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+10   JPasswordField 密码输入框 在输入单行密码，默认回显的是'*'，密码框可以使用setEchoChar(char c)重新设置回显字符，调用char[] getPassword()方法可以返回用户在密码框中输入的密码
