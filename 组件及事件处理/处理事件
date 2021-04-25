@@ -7,3 +7,107 @@
 （3）Event Listener （事件监听者，事件处理者，事件监听器）：对事件进行处理的对象。
 事件源在添加监听器，addXXLister(处理者对象)，需要在参数中指明事件处理者是哪个对象。
 事件处理者，通过实现事件监听接口，实现处理方法，来对事件进行处理。
+
+
+事件处理步骤：
+1、引入系统事件类包，如import java.awt.event.*。
+2、在事件处理类的声明中指定要实现的监听器接口名，
+如： public class MyClass implements ActionListener { …}
+3、注册事件源对象的事件监听者（事件监听器），
+如：btn.addActionListener (this);
+4、在事件处理类中实现监听器中的接口
+   如实现按钮事件监听接口ActionListener ：
+public class MyClass implements ActionListener {
+    public void actionPerformed(ActionEvent e) {
+	 ...//响应某个动作的代码... 
+    } 
+}
+
+java.util.EventObject类是所有事件对象的基础父类，所有事件都是由它派生出来的。
+Swing的相关事件继承于java.awt.SwingEvent类。
+Swing事件分为两大类：
+低级事件
+高级事件
+事件类中包含有事件相关的信息，最重要的有： 
+（1）事件源（即产生事件的组件）
+  getSource() ，得到的Object可以强制类型转换成相应的类型 
+（2）事件的具体情况 
+如MouseEvent 的 getX(), getY() 方法得到鼠标的坐标 
+ KeyEvent 的 getKeyChar() 得到当前的字符等。
+
+低级事件：
+指基于组件和容器的事件，当一个组件上发生事件，如鼠标的进入、点击、拖放等，或组件的窗口开关等时，触发了组件事件。
+（1）ComponentEvent组件事件：组件尺寸的变化、移动。
+（2）ContainerEvent容器事件：组件增加、移动。
+（3）WindowEvent窗口事件：包括用户点击了关闭按钮，窗口得到与失去焦点，窗口最小化等。
+（4）FocusEvent焦点事件：焦点的获得和丢失。
+（5）KeyEvent键盘事件：键按下、释放。
+（6）MouseEvent鼠标事件：包括鼠标按下，鼠标释放，鼠标点击等。
+
+高级事件：
+指基于语义的事件，它可以不和特定的动作相关联，而依赖于触发此事件的类。
+（1）ActionEvent动作事件：对应一个动作事件，它不是代表一个具体的动作，而是一种语义。如按钮按下，JTextField中按Enter键。
+（2）AdjustmentEvent调节事件：在滚动条上移动滑块以调节数值。
+（3）ItemEvent项目事件：选择项目，不选择则是“项目改变”。
+（4）TextEvent文本事件：文本对象改变 。
+
+常用事件
+对所有组件能用的事件 
+ component listener
+ focus listener
+ key listener
+ mouse listener 
+mouse-motion listener 
+mouse-wheel listener
+ …
+ 对特定组件能用的事件
+Action Listener 
+Caret Listener
+Change Listener
+Item Listener 
+List Selection Listener
+ Window Listener 
+ …
+
+事件监听器
+事件监听器是一些事件的接口 
+是 AWTEventListener的子接口 
+接口中含有相关的方法
+ 如：MouseMotionListener 是对鼠标移动事件的处理的接口，它含有两个重要的方法：
+ void mouseDragged (MouseEvent e)；// 处理鼠标拖动的方法
+ void mouseMoved (MouseEvent e)；// 处理鼠标移动的方法 
+这些方法带一个事件对象作为参数 
+事件参数是AWTEvent的子类 
+如MouseMotionListener的两个方法都带MouseEvent参数。 
+程序中可以根据这个参数可以得到有关事件的详细信息。
+事件监听者(也是事件监听器)：
+1）当事件发生时，事件监听者便是被通知的对象。为此，它必须向一个或多个事件源注册，以便接收发生事件的通知。
+2）事件监听者还必须实现一些方法，用来接收和处理通知的事件。
+监听器的实现有两种方法 
+implements xxxListener 
+监听器需要实现其中的每个方法 
+extends xxxAdapter 
+XXXAdapter是XXXListener的默认实现，每个方法的方法体为空 
+ 监听器可以只重写其中重要的方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
