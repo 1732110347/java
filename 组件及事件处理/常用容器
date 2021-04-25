@@ -1,0 +1,23 @@
+JComponent是Container的子类，因此JComponent子类创建的组件也都是容器，但我们至少将
+JButton，JTexFied，JCheckBox等组件当容器使用。JComponent 专门提供了一些经常用来添加组件的容器
+相对于JFrame底层容器，本节提到的容器被习惯地称为中间容器。中间容器必须被添加到底层容器中才能发挥作用
+
+
+中间容器组件：
+JPanel面板组件
+轻量级容器组件
+没有标题的中间容器，实现容器的嵌套。
+拥有自己的布局管理器，可以跟其它容器的布局不一样。默认布局管理器是FlowLayout。
+这类容器不能独立存在，必须通过add()方法添加到一个顶层容器或存在于顶层容器的一个中间容器。
+面板(JPanel)的大小由它所包含的组件决定
+当组件个数增加，面板(JPanel)也会随之而增大
+
+顶层(底层)容器组件：
+JDialog对话框
+其它容器组件：
+分层面板（JLayeredPane）
+滚动面板（JScrollPane）
+分隔面板（JSplitPane）
+选项板（JTabbedPane）
+工具栏（JToolBar）
+内部框架（JInternalFrame）
