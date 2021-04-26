@@ -226,7 +226,42 @@ DEMO试样
 Variable易变的
 
 
+每个对象都有一个名为this的引用，它指向当前对象本身。
+this只能用于类的构造方法和实例方法中。不能类方法
 
+1.普通的直接引用 构造方法
+this 相当于是指向当前对象本身。在构造方法中，代表使用该构造方法所创建的对象
+public class People{
+    int leg,hand;
+    String name;
+    People(String s){
+        name=s;
+        this.init();   //可以省略this，即将this.init();写成init();
+    }
+    void init(){
+       leg=2;
+       hand=2;
+       System.out.println(name+"有"+hand+"只手"+leg+"条腿");
+    }
+    public static void main(String args[]){
+      People boshi=new People("布什"); //创建boshi时，构造方法中的this就是对象boshi
+    }
+} 
+
+
+2.形参与成员名字重名，用 this 来区分： 实例方法
+this.name=name this.name是成员变量
+this.方法 this可以省略
+this.成员变量
+static成员变量在实例方法中出现默认是。类名.成员变量 但static可以和其他对象共享。通常情况下可以省略
+对于类方法的调用为 类名.方法
+一个实例方法调用另一个方法时可以省略this或类名
+this不能出现在类方法中，因为类方法可以通过类名直接调用，此时可能没有对象产生
+
+extends继承
+
+implements关键字
+使用 implements 关键字可以变相的使java具有多继承的特性，使用范围为类继承接口的情况，可以同时继承多个接口（接口跟接口之间采用逗号分隔）。
 
 
 
