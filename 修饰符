@@ -153,7 +153,15 @@ public class MyRunnable implements Runnable
 
 
 
-
+不同修饰符修饰的内容(和内部类无关)
+            类	        成员变量	成员方法	构造方法
+private		            Y	        Y	        Y
+默认	     Y	         Y	         Y	         Y
+protected		         Y	         Y	        Y
+public	    Y	        Y	        Y	        Y
+abstract	Y		                Y	
+static		            Y	        Y	        Y
+final	    Y	        Y	        Y	
 
 
 

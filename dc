@@ -221,6 +221,22 @@ private关键字
 可以修饰成员变量和成员方法,被其修饰的成员只能在本类中被访问
 应用：在定义类时给成员变量赋值private，并提供get和set方法用于外部访问，这样可以提高数据的安全性
 
+ublic class Telphone{
+      private float screen；
+
+      private float cpu;
+
+      private float mem;
+
+      public float getScreen(){
+             return screen;
+      }//此处用getScreen方法获取属性screen属性的值。在后面的程序中若要用到属性screen，调用此方法即可。
+
+      public void setScreen(float newScreen){
+            screen=newScreen
+      }//此处用serScreen方法为属性screen赋值。
+
+
 DEMO试样
 
 Variable易变的
