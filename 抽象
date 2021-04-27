@@ -27,4 +27,13 @@ class Shape {
 abstract类里可以有abstract方法，也可以没有。
 有abstract方法的类，必须声明为abstract类。
 
+抽象类
+用关键字abstract修饰的类。
+不能使用new运算符创建abstract类的对象
+可以用抽象类声明变量。
+任何继承了抽象类的非抽象类（子类）的对象可以给这个变量赋值。
+如果一个类是abstract类的子类，它必须：
+   1）要么实现(覆盖)父类的所有的abstract方法。
+   2）要么也声明为abstract类。
+
 
