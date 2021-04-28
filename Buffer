@@ -1,0 +1,49 @@
+append追加
+setcharAt(位置,'字符')单个替换
+insert(位置,“字符”)插入
+reverse字符序列反转
+delete(开始数字，结束数字）删除
+replace(开始数字，结束数字)整体替换
+
+StringBuffer类和String一样，都用来代表字符串，只是实现方式会有所不同，StringBuffer在内存使用上比String更适合，尤其是需要对插入、删除、修改字符串的时候。StringBuffer的方法与String很多都是相同的，但是同样存在的区别导致很多学员会将两者搞混，下面java技术指导老师来为大家详细介绍java中StringBuffer几种常用方法。
+
+1、append方法
+
+public StringBuffer append(boolean b)
+
+该方法的作用是追加内容到当前StringBuffer对象的末尾，类似于字符串的连接。调用该方法以后，StringBuffer对象的内容也发生改变。
+
+2、insert方法
+
+public StringBuffer insert(int offset, boolean b)
+
+作用是在StringBuffer对象中插入内容，然后形成新的字符串。
+
+3、deleteCharAt方法
+
+public StringBuffer deleteCharAt(int index)
+
+该方法的作用是删除指定位置的字符，然后将剩余的内容形成新的字符串。
+
+4、reverse方法
+
+public StringBuffer reverse()
+
+作用是反转StringBuffer对象中的内容，然后形成新的字符串。
+
+5、trimToSize方法
+
+public void trimToSize()
+
+该方法的作用是将StringBuffer对象的中存储空间缩小到和字符串长度一样的长度，减少空间的浪费。
+
+6、setCharAt方法
+
+public void setCharAt(int index, char ch)
+
+作用是修改对象中索引值为index位置的字符为新的字符ch。
+
+java中StringBuffer几种常用方法就为大家介绍到这里，StringBuffer的优势主要表现在字符串的修改、删减上，当然StringBuffer和String各自有优势和不足，正如达内培训师经常说的那样，编程语言中每一个方法、类、变量都是有它存在的道理的，没有绝对的好坏，如何根据实际情况灵活运用，才是考验一名合格java开发人员实力的主要标准。
+————————————————
+版权声明：本文为CSDN博主「米斯桃」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weixin_36459547/article/details/114351614
