@@ -1,9 +1,9 @@
 append追加
-setcharAt(位置,'字符')单个替换
+charAt(位置,'字符')单个替换
 insert(位置,“字符”)插入
 reverse字符序列反转
 delete(开始数字，结束数字）删除
-replace(开始数字，结束数字)整体替换
+replace(开始数字，结束数字，字符)整体替换
 
 StringBuffer类和String一样，都用来代表字符串，只是实现方式会有所不同，StringBuffer在内存使用上比String更适合，尤其是需要对插入、删除、修改字符串的时候。StringBuffer的方法与String很多都是相同的，但是同样存在的区别导致很多学员会将两者搞混，下面java技术指导老师来为大家详细介绍java中StringBuffer几种常用方法。
 
