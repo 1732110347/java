@@ -1,0 +1,50 @@
+启动 进入安装好的文件夹 cd/d E:\xx\xxx\bin\
+初始化 mysqld --initialize-insecure
+再次输入mysqld
+
+可以使用msqldadmin-u root-p需要先输入初始密码，再输入新密码呵确认新密码
+
+4）使用create database <数据库名称>，可以创建数据库。
+5）使用create table <表名>，可以创建表。 
+6）使用insert语句，可以插入数据。
+
+create database if not exists test default charset utf8mb4 collate utf8mb4_unicode_ci;
+查询时需要排序，collate 类型来告知mysql，当字段类型不同时，如何对该列进行排序和比较。
+删除数据库
+ 删除数据库     drop databse test;
+ 设置当前数据库： use test;选择要操作的数据库
+
+
+常用的数据操作SQL命令（DML）
+ SELECT：用于从数据库查询和显示数据。 应用程序中使用的绝大多数SQL命令都是SELECT语句。
+ INSERT：向表添加新行。
+ DELETE：从表中删除指定的行或一组行。
+ UPDATE：更改表中列或列组中的现有值。
+
+SELECT语句语法格式：
+SELECT [ALL|DISTINCT] <目标列表达式> [,<目标列表达式>]…
+   FROM <表名或视图名> [,表名或视图名] …
+   [WHERE<条件表达式>]
+   [GROUP  BY<列名1>[HAVING<条件表达式>]]
+   [ORDER  BY <列名2>[ASC|DESC]]
+   Limit (n, m);
+简单示例：从Xsheng表中，查询数据记录，包含XMing、Xhao、Yxi三列的数据。
+select  XMing,  XHao,  YXi  from  XSheng; 
+
+FROM子句指定基本表或视图中，根据WHERE子句的条件表达式查找出满足该条件的行，按照SELECT子句指定的目标列表达式，筛选出行中的属性值形成结果表。
+GROUP BY子句，表示将结果按<列名1>的值进行分组，该属性列值相等的行为一个组；如果GROUP BY子句带有短语HAVING，则只有满足短语指定条件的分组才会输出。
+ORDER BY子句，表示将结果表要按照<列名2>的值进行升序和降序排列。
+Limit子句，表示取从第n条开始的m条记录。
+
+
+
+
+
+
+
+
+
+
+
+
+

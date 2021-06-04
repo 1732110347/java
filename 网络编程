@@ -1,0 +1,93 @@
+协议：网络协议为计算机网络中进行数据交换而建立的规则、标准或约定的集合。如规定数据包大小、数据包格式、通信方式等通信细节。
+常见协议：HTTP  FTP    TCP   IP   UDP等。
+
+域名：IP地址难以记忆和书写，发展出一种符号化的地址，域名。
+一般情况下，一个IP地址与一个唯一的域名相对应。
+例如：www.gcu.edu.cn  对应的IP地址： 58.205.213.52
+端口号：用于标示运行在计算机中的进程（应用程序）。
+端口用16位数字表示，范围为0到65535。
+ 0 - 1023的端口号保留供知名服务使用。
+如：HTTP（80）、FTP（21）、HTTPS（443）。 
+我们自己开发的应用使用1024及之后的端口号。
+
+ protocol://hostname[:port] /filename
+protocol:   协议，如http,ftp
+hostname（主机名），可以用域名或IP地址标示     
+port（端口号），如何使用的是默认端口号，可以省略，例如http协议的默认端口为80，通常情况下就省略了。
+filename（文件名），表示资源文件的路径，用“/”隔开。
+例如：
+https://www.w3school.com.cn/jquery/index.asp
+ftp://10.5.1.5
+
+常用构造方法：四种方法，都会抛出MalformedURLException
+（1） public URL(String url) throws MalformedURLException  
+例: URL myURL= new URL(“http://www.cumt.edu.cn/”) 。
+（2）URL(URL url , String relativeURL) throws MalformedURLException  
+例如: URL myURL= new URL(“http://www.ccu.edu.cn/”);
+URL mydoc = new URL(myURL, ”mydoc.html”);  //mydoc.html是网站上的文件
+（3）URL(String protocol,String host,String resourcename资源名) 
+例如:URL  myURL = new URL(“http”, www.cumt.edu.cn, ”mydoc.html”); 
+（4）URL(String protocol,String host,int port,String resourcename )
+
+常用方法：
+（1）String getProtocol( )
+返回URL的协议名。
+（2）String getHost( )
+返回URL的主机名。
+（3）int getPort( )
+返回URL的端口号, 如果没有设置端口号返回值为-1。
+（4）String getFile( )
+返回URL的文件名及路径。
+（5）String getRef( )
+返回URL的标记
+
+
+通过URL获取资源
+（1）通过URL对象的openStream()方法，获得一个输入流对象，然后从输入流中读取URL地址上的数据。
+例子：一般网络资源的获取，放在线程中实现。
+URL baidu = new URL("http://www.baidu.com/index.html");
+InputStreamReader is = new InputStreamReader(baidu.openStream());
+BufferedReader in = new BufferedReader(is);
+String inputLine;
+while ((inputLine = in.readLine()) != null)
+	    System.out.println(inputLine);
+in.close();
+
+2）通过URL建立一个URLConnection对象，再通过URLConnection对象的获取输入流方法getInputStream()和获取输出流方法getOutputStream对URL地址上的资源进行读写。
+例子：
+URL baidu = new URL("http://www.baidu.com/");
+URLConnection bd = baidu.openConnection();
+InputStreamReader is = new InputStreamReader(bd.getInputStream());
+BufferedReader in = new BufferedReader(is);
+String inputLine;
+while ((inputLine = in.readLine()) != null) 
+     System.out.println(inputLine);
+in.close();
+
+（3）在Applet 中，通过调用Applet类的getAudioClip(）、getlmage(）、play(）等方法直接读取或操作URL 所表示的声音或图像文件，
+通过URL 可以像访问本地文件一样访问网络上其他主机中的文件。
+
+总结：URL类提供了Internet上资源较高层次的访问机制（例如各大站点的URL资源）。
+当我们需要获取的网络资源，没有URL，这时候就需要基于Socket进行网络通信。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
