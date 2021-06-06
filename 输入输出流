@@ -1,49 +1,4 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-9 组件及事件处理
-
-JFrame构造方法：
-JFrame()  ：创建无标题窗口。
-JFrame(String s) ： 创建标题名字是字符串s的窗口。
-例如：JFrame  f = new JFrame("Hello");
-setDefaultCloseOperation方法：
-设置单击窗口上的关闭按钮时的事件处理方式。
-JFrame.DO_NOTHING_ON_CLOSE什么都不做
-JFrame.HIDE_ON_CLOSE隐藏当前窗口
-JFrame.DISPOSE_ON_CLOSE隐藏当前窗口，并释放窗口占有的其他资源
-JFrame.EXIT_ON_CLOSE结束窗口所在的应用程序
-
-public void setBounds(int x,int y,int w,int h)	以(x,y)为对象的左上角，以w为宽，以h为高设置对象的显示区域 
-public void setResizable(boolean b)	设置是否可以调整大小
-public void setSize(int width,int height)	设置对象的大小
-public void  dispose()	撤销窗口，释放资源
-public void setLayout(LayoutManager mgr) 	设置窗口的布局管理器
-public void setVisible(boolean b)	设置组件是否显示
-public void setLocation(int x,int y)	设置组件显示位置的左上角坐标为(x,y)
-public Component add(Component comp) 	添加组件
-public void setMenuBar(MenuBar mb) 	设置菜单栏
-public void validate() 	再次布置窗口上面的组件（刷新）
-public void setBackground(Color c)	设置对象的背景色为c 
-public void  setLocationRelativeTo(Component c)	设置窗口的相对于组件的位置，c为null时，表示放在屏幕中央
-public void setFont(Font font)	设置对象的字体样式为font
-public void setContentPane(Container c)	设置窗口的内容面板
-public String getName()	返回对象的名称
-Public void setTitle(String s)	设置窗口的标题
-
-
-10输入输出
-
+filename是文件名字  directoryPath是文件路径  dir是目录
 1)  File(String filename);
  参数filename指明了文件名，文件名可以是完整文件名（目录+文件名），也可以是相对文件名，也可以是目录。
  例如： 
@@ -91,6 +46,26 @@ public String[] list(FilenameFilter obj) 用字符串形式返回目录下的指
 public File [] listFiles(FilenameFilter obj) 用File对象形式返回目录下的指定类型所有文件。
 上述两方法的参数FilenameFilter是一个接口，该接口有一个方法：
 public boolean accept(File dir,String name); 判断目录下的文件是否需要被列出。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -153,7 +153,13 @@ catch 不能独立于 try 存在。
 try 代码后不能既没 catch 块也没 finally 块。
 try, catch, finally 块之间不能添加任何代码。
 
-
+NullPointerException	在对引用对象进行正当操作时，使用了null对象变量   当应用程序试图在需要对象的地方使用 null 时，抛出该异常
+ArithmeticException	无效的算术运算情况引起此类异常                    当出现异常的运算条件时，抛出此异常。例如，一个整数"除以零"时，抛出此类的一个实例。
+IndexOutOfBoundsException	试图使用超出应用对象边界的下标              指示某排序索引（例如对数组、字符串或向量的排序）超出范围时抛出。
+NegativeArraySizeException	试图定义大小为负值的数组                  如果应用程序试图创建大小为负的数组，则抛出该异常。
+ArrayStoreException	试图在数组中存放不允许的类型                      试图将错误类型的对象存储到一个对象数组时抛出的异常。
+ClassCastException	试图把对象转换为无效的类型 //多出现在多态          当试图将对象强制转换为不是实例的子类时，抛出该异常。  
+ IOException是输入或输出异常（即写读异常）
 
 
 
