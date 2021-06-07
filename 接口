@@ -10,6 +10,7 @@ Java 接口
 
 接口无法被实例化，但是可以被实现。一个实现接口的类，必须实现接口内所描述的所有方法，否则就必须声明为抽象类。另外，在 Java 中，接口类型可用来声明一个变量，他们可以成为一个空指针，或是被绑定在一个以此接口实现的对象。
 
+接口不能用final static 
 接口中的变量自动都是public  static  final，共有的静态最终变量（等价于常量）。
 接口中的方法默认为public abstract；
 接口是一种特殊类，也产生class文件。
@@ -114,6 +115,3 @@ public class MammalInt implements Animal{
 
 public interface Hockey extends Sports, Event
 以上的程序片段是合法定义的子接口，与类不同的是，接口允许多继承，而 Sports及 Event 可能定义或是继承相同的方法
-
-
-

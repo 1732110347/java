@@ -92,12 +92,73 @@ public File [] listFiles(FilenameFilter obj) 用File对象形式返回目录下�
 上述两方法的参数FilenameFilter是一个接口，该接口有一个方法：
 public boolean accept(File dir,String name); 判断目录下的文件是否需要被列出。
 
+1）用Runtime 类的getRuntime()静态方法创建一个Runtime对象：
+例如：Runtime ec=Runtime.getRuntime();
+	2） 通过Runtime对象调用exec(String command)方法打开本地机的可执行文件或执行一个操作。
+例如：ec.exec(Notepad.exe);
 
 
+(1) 构造输入流对象，设定输入流的源
+ 使用FileInputStream类的下列构造方法创建指向文件的输入流。
+FileInputStream(String name);
+FileInputStream(File fileobj); 
+其中：参数name或者fileobj指定的文件称为输入流的源。
+如果输入流指向的文件不存在，则会抛出IOException。
+FileInputStream in=new FileInputStream("hellow.txt");创建指向文件xx的输入流
+
+File f=new File("hellw.txt");指定输入流的源
+FileInputStream in=new FileInputStream(f);创建指向源的输入流
 
 
+(2) 使用输入流对象，读取字节
+可以调用从父类继承的read方法顺序地从文件中读取数据
+int read() 
+读取单个字节的数据，返回字节值（0~255整数），如果未读出字节就返回-1。
+int read(byte b[]) 
+读取b.length个字节到字节数组b中，返回实际读取的字节数。如果到达文件的末尾，则返回-1。
+int read(byte b[], int off, int len) 
+读取len个字节到字节数组b中，从下标为off的位置开始存放。并返回实际读取的字节数目。如果到达文件的末尾，则返回-1。
+只要不关闭流，每次调用read方法就顺序地读取文件中的其余内容，直到文件的末尾或文件字节输入流被关闭。
+
+(3) 关闭流
+    void close()
+关闭输入流，并释放任何与该流有关的资源。
 
 
+(1) 构造输出流对象，设定输出流的目的地
+ 使用FileOutputStream类的下列构造方法创建指向文件的输出流。
+FileOutputStream(String name);
+FileOutputStream(File file);
+FileOutputStream(String filepath , boolean append) 
+FileOutputStream (File fileobj , boolean append) 
+其中：参数name或者file指定的文件称为输出流的目的地。
+如果文件不存在，则会创建该文件；如果文件存在，则会根据append是否为false(没有append参数则认为是false)，来决定是否刷新文件（重置文件，把内容清空）。
+文件创建失败或者不能被写，会抛出IOException。
+
+File outFile = new File("newFace.gif"); 
+//写入到文件,原来内容被覆盖.
+FileOutputStream outStream =
+     new FileOutputStream(outFile); 
+
+//写入到文件末尾,原来内容不被覆盖.
+FileOutputStream fo = new FileOutputStream("MyOut.dat", true);
+
+(2) 使用输出流对象，向目的地写入字节
+可以调用从父类继承的write方法顺序地将数据写入文件
+void write(int n) 
+向目的地写入单个字节n，只写入低位的8个bit。
+void write(byte b[]) 
+向目的地写入一个字节数组中的所有数据
+void write(byte b[], int off, int len) 
+将字节数组b中，从下标为off的位置开始，写入len个字节到目的地。
+只要不关闭流，每次调用write方法就顺序地向目的地写入内容，直到流被关闭
+
+(3) 关闭流
+void close()
+关闭输入流，并释放任何与该流有关的资源。
+关闭输出流可以把该流所用的缓冲区的内容，强制写到文件上。
+(4) 其它方法
+flush()：刷空输出流，并将输出流的缓冲区中的数据强制送出到目的地。
 
 
 
