@@ -158,5 +158,91 @@ void close()
 flush()：刷空输出流，并将输出流的缓冲区中的数据强制送出到目的地。
 
 
+BufferedReader(字符输入缓冲流)：
+从字符输入流中读取文本，缓冲各个字符，从而实现字符、数组和行的高效读取。 
+缓冲流的构造方法总是要带一个其他的字符流对象作参数。
+BufferedReader类构造方法：
+public BufferedReader(Reader in,int sz)   
+ 创建一个使用指定大小输入缓冲区的缓冲字符输入流。
+public BufferedReader(Reader in)   
+ 创建一个使用默认大小输入缓冲区的缓冲字符输入流。
+ 参数in指定了一个被连接的底层字符输入流对象。
+
+
+BufferedReader常用方法：
+String readLine()
+读取一个文本行。返回包含该行内容的字符串，不包含任何行终止符，如果已到达流末尾，则返回 null
+int read()
+读取一个字符
+void close()
+关闭的时候，会把连接的底层流也关闭掉，底层流无需再关闭。
+
+BufferedWriter(字符输出缓冲流)：
+向字符输出流中写入字符，缓冲各个字符，从而实现字符、数组和行的高效输出。 
+缓冲流的构造方法总是要带一个其他的字符流对象作参数。
+BufferedWriter类构造方法：
+public BufferedWriter(Writer out, int sz)   
+ 创建一个使用指定大小输入缓冲区的缓冲字符输出流。
+public BufferedWriter(Writer out)   
+ 创建一个使用默认大小输入缓冲区的缓冲字符输出流。
+ 参数out指定了一个被连接的底层字符输出流对象
+
+BufferedWriter常用方法：
+String newLine()
+写入一个行分隔符。
+void write(char[] cbuf, int off, int len)
+写入字符数组的某一部分。
+void write(int c)
+写入单个字符
+void write(String s) 
+写入字符串。 
+void write(String s, int off, int len) 
+写入字符串的某一部分。 
+
+BufferedInputStream、BufferedOutputStream
+缓冲流输入输出是一个非常普通的性能优化。
+BufferedInputStream构造方法:
+（1）public BufferedInputStream(InputStream in)
+（2）public BufferedInputStream(InputStream in,int size)
+BufferedOutputStream构造方法：
+（1）public BufferedOutputStream(OutputStream out)
+（2）public BufferedOutputStream(OutputStream out, int size)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
