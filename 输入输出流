@@ -209,16 +209,69 @@ BufferedOutputStream构造方法：
 （2）public BufferedOutputStream(OutputStream out, int size)
 
 
+字节流和字符流的转换
+InputStreamReader 
+字节流到字符流的桥接器。
+使用指定的字符集读取字节，并将它们解码为字符。
+每次调用read()方法都可能导致从底层字节输入流中读取一个或多个字节（取决于字符编码集）。
+构造方法：
+InputStreamReader(InputStream in)：使用默认字符集
+InputStreamReader(InputStream in,String charsetName)：使用指定字符集
+示例：InputStreamReader = new InputStreamReader(new FileInputStream(file), "utf-8");
+
+OutputStreamWriter
+字符流到字节流的桥接器。
+使用指定的字符编码集将写入其中的字符，编码为字节，再写入到底层字节流中。
+每次调用write()方法都会导致在给定字符上调用编码转换器。
+构造方法：
+OutputStreamWriter(OutputStream in)：使用默认字符集
+OutputStreamReader(OutputStream in,String charsetName)：使用指定字符集
+示例：InputStreamReader = new InputStreamReader(new FileInputStream(file), "utf-8");
+
+ByteArrayInputStream(字节数组输入流)：
+从内存中读取数据。 
+构造方法：
+public ByteArrayInputStream(byte[] buf)   
+ buf指定了内存缓冲区，从内存缓冲区读取数据。
+public ByteArrayInputStream(byte[] buf, int offset, int length)   
+从内存缓冲区的指定位置和指定大小范围中读取数据。
+常用方法：
+int read()：从缓冲区读取一个字节
+int read(byte[] b)：从缓冲区读取多个字节，放到数组b中
 
 
+ByteArrayOutputStream(字节数组输出流)：
+向内存中写入数据。 
+构造方法：
+public ByteArrayOutputStream()   
+关联一个内存缓冲区，大小为32个字节，会自动扩容。
+public ByteArrayOutputStream(int size)   
+内存缓冲区大小由size指定，会自动扩容。
+常用方法：
+void write(int b)：向缓冲区写入一个字节
+void write(byte[] b, int off, int len)：向缓冲区写入多个字节
 
 
+数据流：DataInputStream和DataOutputStream
+DataInputStream:从已有的字节输入流中读取Java基本数据类型的数据，如布尔型数、整型数、浮点数等。
+DataOutputStream:将Java基本数据类型数据写到一个已有的字节输出流中。
 
+数据流构造方法：
+（1）pubilc DataInputStream(InputStream in)
+创建一个新的数据输入流对象，从输入流in中读取基本类型的数据。
+（2）pubilc DataOutputStream(OutputStream out)
+在输出流out上创建一个新的数据输出流对象。 
+参数in/out指定了一个被连接的底层字节流对象。
 
-
-
-
-
+DataInputStream提供的读取数据的部分方法如下：
+byte readByte( )	
+boolean readBoolean( )
+double readDouble( )
+float readFloat( )
+char readChar( )
+short readshort( )	
+long readLong( )	
+int readInt( )
 
 
 
