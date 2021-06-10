@@ -11,6 +11,10 @@ filename是文件名字  directoryPath是文件路径  dir是目录
 interface 接口名称 创建接口
 类名 implements 接口1,接口2 实现接口
 
+protocol:   协议，如http,ftp
+hostname（主机名），可以用域名或IP地址标示     
+port（端口号），如何使用的是默认端口号，可以省略，例如http协议的默认端口为80，通常情况下就省略了。
+filename（文件名），表示资源文件的路径，用“/”隔开。
 
 
 

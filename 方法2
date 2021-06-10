@@ -254,7 +254,47 @@ void write(byte[] b, int off, int len)：向缓冲区写入多个字节
 
 
 
+13网络编程
 
+
+
+
+
+1．获取Internet上主机的地址  
+使用InetAddress类的静态方法getByName(String s) 获得一个InetAddress对象。和InterName
+InetAddress address = InetAddress.getByName("www.sina.com.cn");
+String ip=address1.getHostAddress();  转为ip地址
+
+InetAddress主要实例方法：
+String  getHostAddress()：获取IP地址；
+String  getHostName()：获取域名；
+
+获取本机IP
+static InetAddress getLocalHost()：获取一个InetAddress对象，包含本机的域名和IP地址。
+
+
+1、首先在服务器上创建ServerSocket对象，
+构造方法：
+ServerSocket() ：创建一个没有绑定到指定端口的服务器端套接字对象，系统会随机分配一个没有被占用的端口号。
+ServerSocket​(int port)：创建一个没有绑定到端口port的服务器端套接字对象。
+方法：
+Socket accept()：阻塞当前线程的执行，直到收到客户的连接请求，返回一个和客户端Socket对象相连接的Socket对象。
+不同的客户端来连接，会相应返回不同的Socket对象。
+
+2、客户端的程序使用Socket类建立到服务器的连接。
+Socket(String host,int port) host 是服务器的IP地址 port是端口号
+建立连接到服务器的套接字对象：
+    try {  
+           Socket mysocket = new Socket(“http://192.168.0.78”,1880);
+     }
+     catch(IOException e) { 
+     } 
+
+getInputString()获取一个输入流，这个输入流的源和服务器端的一个输入流的目的地相同，
+因此客服端用输入流可以读取服务器写入到输出流的数据
+
+getOutputString()获取一个输入流，这个输入流的源和服务器端的一个输入流的目的地相同，
+因此客服端用输入流可以读取服务器写入到输出流的数据
 
 
 
