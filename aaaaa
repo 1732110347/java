@@ -1,0 +1,146 @@
+{10,5,20,50,100,200,500,800,2,80,300}来表示，每个元素，表示奖金;
+
+1）创建两个抽奖箱(线程)设置线程名称分别为“抽奖箱1”，“抽奖箱2”，
+
+2）随机从arr数组中获取奖项元素并打印在控制台上，格式如下:
+
+抽奖箱1 又产生了一个 10 元大奖
+
+抽奖箱2 又产生了一个 100 元大奖
+
+class Chou         （1）       {
+
+     //奖金池，每个元素代表一张抽奖券
+
+     int[] arr = { 10, 5, 20, 50, 100, 200, 500, 800, 2, 80, 300 };
+
+     int num = arr.length;
+
+     //每张抽奖券有没有被抽中过
+
+     boolean[] flag = new boolean[arr.length];
+
+
+
+     public void run() {
+
+          while (true) {
+
+                 if (num > 0) {
+
+                             Random rd = new Random();
+
+                             int index = rd.nextInt(arr.length);
+
+                              //以随机数作为数组元素下标，获取抽奖券
+
+                             int get =       （2）   ;
+
+
+
+                             //2个线程都需要查看抽奖券
+
+                             synchronized(this){
+
+                             //如果没有被抽中过
+
+                             if (flag[index] != true) {
+
+                                                //标志该抽奖券被抽中了
+
+                                                 flag[index] = true;
+
+                                                //获取当前线程的名字
+
+                                                String name =             （3）          ;
+
+                                                 System.out.println(name+ " 又产生了一个" + get + "元大奖");
+
+                                                 num--;
+
+                                         }
+
+                                 }
+
+ 
+
+                                 try {
+
+                                         //休眠100ms，让出CPU时间片，否则线程会一直运行到结束。
+
+                                                 （4）     ； 
+
+                                 } catch (InterruptedException e) {
+
+                                         e.printStackTrace();
+
+                                 }
+
+                         }
+
+                        else
+
+                             break;
+
+                 }
+
+         }
+
+    }
+
+
+
+public class RunnableDemo{
+
+     public static void main(String[] args){
+
+         Chou c = new Chou();
+
+           //以c作为线程主题，创建线程1
+
+         Thread t1 = new Thread(     (5)      );
+
+          //设置线程1的名字为“抽奖箱1”
+
+              (6)      ;
+
+          //以c作为线程主题，创建线程2，这样就跟线程1共享同一个线程主体，借此方式共享抽奖池
+
+         Thread t2 = new Thread(     (7)      );
+
+          //设置线程2的名字为“抽奖箱2”
+
+                      (8)      ;
+
+         //启动线程1
+
+              (9)      ;
+
+        //启动线程2
+
+              (10)      ;
+
+    }
+
+}
+
+第一空： 
+extend Thread
+第二空： 
+rd.get(index)
+第三空： 
+Thread.currenThread().getName
+第四空： 
+Thread.sleep(1000)
+第五空： 
+new Chou()
+第六空： 
+t1.setName("抽奖箱1")
+第七空： 
+new Chou()
+第八空： 
+t2.setName("抽奖箱2")
+第九空： 
+t1.start()
+第十空： 
+t2.start

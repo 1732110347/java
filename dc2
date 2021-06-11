@@ -16,9 +16,11 @@ hostname（主机名），可以用域名或IP地址标示
 port（端口号），如何使用的是默认端口号，可以省略，例如http协议的默认端口为80，通常情况下就省略了。
 filename（文件名），表示资源文件的路径，用“/”隔开。
 
+Thread类：线程类。
 
+implements Runnable接口
 
-
+InterruptedException异常从字面意思上就是中断异常
 
 
 
