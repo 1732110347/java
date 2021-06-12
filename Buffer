@@ -43,7 +43,3 @@ public void setCharAt(int index, char ch)
 
 作用是修改对象中索引值为index位置的字符为新的字符ch。
 
-java中StringBuffer几种常用方法就为大家介绍到这里，StringBuffer的优势主要表现在字符串的修改、删减上，当然StringBuffer和String各自有优势和不足，正如达内培训师经常说的那样，编程语言中每一个方法、类、变量都是有它存在的道理的，没有绝对的好坏，如何根据实际情况灵活运用，才是考验一名合格java开发人员实力的主要标准。
-————————————————
-版权声明：本文为CSDN博主「米斯桃」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/weixin_36459547/article/details/114351614

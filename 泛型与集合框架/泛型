@@ -104,27 +104,122 @@ public E getFirst()/getLast()
 返回第一个/最后一个列表元素
 
 
+集合的遍历：依次访问集合中的所有元素，称为集合的遍历。
+LinkedList的遍历方式：
+1）使用get(int index)方法+循环结构
+
+
+2）使用Iterator对象 + 循环结构
+Iterator：是一种设计模式，将集合数据的存储与遍历分离，用于对 Collection 集合进行迭代遍历。
+Collection对象调用iterator()方法，可以获得一个Iterator对象。
+常用方法：
+（1）hasNext()：Iterator对象调用该方法检查序列中是否还有元素。
+（2）next()：第一次调用next()方法时，它返回序列的第一个元素，以后再次调用时将获得序列中的下一个元素。
+（3）remove()： Iterator对象调用该方法删除上次调用next方法获取的元素。
+
+
+ArrayList类：采用线性顺序存储结构来存储元素。
+大小可动态调整
+构造方法：
+（1）public ArrayList()
+默认的构造方法，以默认的大小(16) 初始化内部的数组。
+（2）public ArrayList(Collection c)：
+用一个Collection对象来构造，并将该集合的元素添加到ArrayList。
+（3）public ArrayList(int n)：
+用指定的大小来初始化内部的数组。
+
+
+ArrayList类常用方法：
+public boolean add(E e)
+在集合末尾追加一个元素。
+public boolean add(int index, E e)
+在列表中指定位置插入一个元素。
+public Object remove(int index)
+移除索引位置的元素，并返回被移除的这个对象
+public E get(int index)
+返回索引位置的列表元素
+public int indexOf(Object o)
+返回元素的索引。如果不在列表中，则返回-1.
+public E set(int index,E e)
+用指定的元素e替换指定位置index上的元素.
+
+
+Stack类：采用线性存储结构来存储元素。
+对元素的操作总是在栈顶
+后进先出
+构造方法：
+（1）public Stack()
+Stack<E>
+创建一个空栈。
+常用方法：
+public E push(E item);实现压栈操作
+public E pop();实现弹栈操作。
+public boolean empty();判断堆栈是否还有数据。有返回false无返回true
+public E peek();获取堆栈顶端的数据，但不删除该数据。
+public int search(Object data);获取数据在堆栈中的位置。 不含则返回-1
+
+
+Set接口：规定了一个无序的集合，不允许元素重复。
+继承了Collection接口。
+元素存入顺序和集合内存储的顺序不同。
+实现类有HashSet（乱序）、TreeSet（排序的）。
+TreeSet类：采用树结构来存储元素。
+树中的结点按照结点中的数据“大小”（不同类型的数据，大小规则不一样）进行排序。
+下一层比上一层的小，同一层的左边比右边小。 
+
+
+TreeSet构造方法：
+（1）public TreeSet()
+默认的构造方法，根据添加的元素相互间的大小来排序存放。
+（2）public TreeSet(Collection c)：
+用一个Collection对象来构造，并将该集合的元素添加到TreeSet中。
+（3） public TreeSet(Comparator c) ：
+用指定的比较器，对元素进行排序存放。
+（4） public TreeSet(SortedSet s) ：
+用已排序的s中的所有元素以及比较规则，来构造对象。
+
+TreeSet常用方法：
+public boolean add(E o) 向树集添加加节点。
+public void clear() 删除树集中的所有节点。
+public void contains(Object o) 如果树集中有包含参数指定的对象，该方法返回true，否则返回false 。
+public E first() 返回树集中的第一个节点中的数据（最小的节点）。
+public E last() 返回最后一个节点中的数据（最大的节点）。
+public isEmpty() 判断是否是空树集，如果树集不含任何节点，该方法返回true 。
+public boolean remove(Object o) 删除树集中的存储参数指定的对象的最小节点。
+public int size() 返回树集中节点的数目。
 
 
 
+哈希算法也称为散列算法，是将数据依据算法直接指定（映射）到一个地址上。
+
+HashSet：不允许有重复元素，不对元素排序。
+主要用哈希算法确定元素在集合中的存放位置。
+HashSet常用方法：
+（1）public HashSet()
+默认的构造方法。
+（2）public boolean add(E e)
+添加元素e。
+HashSet集合在用add()方法添加一个新对象时：
+首先会调用equals(Object o)来比较新项和已有的某项是否相等
+若不相等时，会调用对象的hashCode()方法得到对象的散列码，然后根据这个码计算出对象在集合中存储的位置。
 
 
+在实际使用中，经常需要对无序集合中的元素进行排序、查找元素、随机排序、逆转顺序、旋转移动等操作。
+Java中提供了Collections类来对集合进行常见的操作。
+public static sort(List<E> list)   Collections.sort();
+将list中的元素升序排列。
+public static sort(List<E> list,  Comparator<E> c) 
+将list中的元素按照比较器c指定的比较规则，升序排列。
+int binarySearch(List<T> list, T key,CompareTo<T> c) 
+使用折半法查找list是否含有和参数key相等的元素，如果key链表中某个元素相等，方法返回和key相等的元素在链表中的索引位置（链表的索引位置从0考试），否则返回-1。
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Collections类来对集合进行常见的操作：
+public static void shuffle(List<E> list) 
+将list中的数据按洗牌算法重新随机排列。
+static void rotate(List<E> list, int distance) 
+循环移动链表中的数据，distance大于0，表示循环右移distance个元素；小于0，则表示循环左移。
+public static void reverse(List<E> list) 
+逆转list中的数据存放顺序。
 
 
 
