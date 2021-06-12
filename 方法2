@@ -8,7 +8,7 @@ rand.nextInt(200);//返回一个0 ≤ n ≤200的随机数。
 Random ran2 = new Random(10);
 System.out.println("使用另一个种子为10的Random对象生成[0,10)内随机整数序列: ");
 
-
+toString()强行转为string类型
 
 
 
@@ -447,11 +447,61 @@ getOutputString()获取一个输入流，这个输入流的源和服务器端的
 
 
 
+15泛型与集合框架
 
 
+Collection接口中定义的常用方法：
+ boolean add(E e) 
+ 添加元素e到collection 中。 其中E为泛型。如果是基本类型，会做装箱操作，转换成对应的包装类型的对象。
+boolean remove(Object o) 
+ 从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。Object表示任何类型。
+boolean contains(Object o)   
+ 如果此 collection 包含指定的元素，则返回 true
+int size()           
+ 返回此 Collection 中的元素数。
+ boolean isEmpty()    
+ 如果此 collection 不包含元素，则返回 true。 
+ void clear()   
+移除此 collection 中的所有元素（可选操作）。 
+ Object[]   toArray()   
+ 返回包含此 collection 中所有元素的数组。  
 
 
+（1）public LinkedList()
+构造一个空链表。
+（2）public LinkedList(Collection c)：
+构造一个包含给定集合中元素的链表。
 
+
+public boolean add(E e)	链表末尾添加元素，返回是否成功，成功为 true，失败为 false。
+public void add(int index, E element)	向指定位置插入元素。
+
+public E remove(int index)
+public boolean remove(E e)
+删除一个节点，或者指定位置，或者指定结点中的数据
+public E get(int index)
+返回索引位置的节点中的数据
+public int indexOf(E e)
+查找包含数据e的结点的位置（首次出现）
+public int lastIndexOf(E e)
+查找包含数据e的结点的位置（最后一次出现）
+public E set(int index, E e)
+将指定位置的结点中的数据更新为e，并返回旧数据
+public void addFirst(E e)
+在头部插入一个节点，节点中数据为e
+public void addLast(E e)
+public E removeFirst()
+public E removeLast()
+public int size()    节点个数         -
+public boolean contains(Object e)判断是否含有某一元素。
+public boolean removeFirstOccurrence(Object o)
+移除第一次出现的元素o
+public boolean removeLastOccurrence(Object o)
+移除最后一次出现的元素o
+public Object clone()
+克隆一个链表
+public E getFirst()/getLast()
+返回第一个/最后一个列表元素
 
 
 

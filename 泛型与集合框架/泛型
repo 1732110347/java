@@ -1,0 +1,181 @@
+泛型实现了把类型作为参数。
+可以针对不同的类有相同的处理办法，并且不要求这些类之间具有继承性。
+例如：
+class PointDemo<T> {
+       		private T x;
+       		public void setX(T x) { 
+               		this.x=x;
+      		}
+		}
+
+参数T表示任意一种引用类型,可以是类或者接口，不能为基本类型
+java中分基本数据类型（byte short int long float double char boolean）和引用数据类型（数组 类 接口）
+java 为每种基本类型都提供了对应的封装类型，分别为：Byte、Short、Integer、Long、Float、Double、Character、Boolean。
+引用类型是一种对象类型，它的值是指向内存空间的引用，就是地址。
+
+（2）生成泛型类的对象，使用具体的类型替代泛型参数E
+PointDemo<Integer> p1=new PointDemo<Integer>();
+PointDemo<Float> p2=new PointDemo();//构造时可以不写类型
+PointDemo<String> p3=new PointDemo<String>();
+
+
+Java 集合框架主要包括两种类型的容器：
+集合（Collection），存储元素（值）集合。
+图（Map），存储键/值对映射的集合。
+Collection和Map都是接口，不同的接口里面规定了不同的特征。
+Collections类提供了一些算法，可以对实现了Collection接口类的集合对象，进行排序、查找、逆序等操作。
+
+Collection接口：存储一组不唯一，无序的对象。
+是最基本的集合接口之一。
+一个Collection对象，可以存放一组对象。
+使用泛型来表示存在放Collection对象中的元素的类型。
+元素的类型只能是引用类型，可以相同，也可以不同。
+接口中定义的常用方法：
+ boolean add(E e) 
+ 添加元素e到collection 中。 其中E为泛型。如果是基本类型，会做装箱操作，转换成对应的包装类型的对象。
+boolean remove(Object o) 
+ 从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。Object表示任何类型。
+boolean contains(Object o)   
+ 如果此 collection 包含指定的元素，则返回 true
+int size()           
+ 返回此 Collection 中的元素数。
+ boolean isEmpty()    
+ 如果此 collection 不包含元素，则返回 true。 
+ void clear()   
+移除此 collection 中的所有元素（可选操作）。 
+ Object[]   toArray()   
+ 返回包含此 collection 中所有元素的数组。  
+
+
+
+
+
+List接口：规定了一个有序的集合，允许元素重复。
+继承了Collection接口。
+List中的元素都对应着一个整数型的序号，记载其在容器中的位置。
+ List元素的序号类似数组元素的下标。
+可以根据序号存取容器中的元素。
+主要实现类有ArrayList类、LinkedList类、Stack类。
+LinkedList类：采用线性链式存储结构来存储元素。
+是一种线性表，可以存储重复数据。
+每个元素称为链表中的一个结点。 
+
+LinkedList类：采用线性链式存储结构来存储元素。
+
+
+其中data表示数据，previous和next表示引用。
+每次插入一个元素，只需要申请一个新的结点。
+删除元素，只需要删除一个旧的结点。
+构造方法
+（1）public LinkedList()
+构造一个空链表。
+（2）public LinkedList(Collection c)：
+构造一个包含给定集合中元素的链表。
+
+
+public boolean add(E e)	链表末尾添加元素，返回是否成功，成功为 true，失败为 false。
+public void add(int index, E element)	向指定位置插入元素。
+
+public E remove(int index)
+public boolean remove(E e)
+删除一个节点，或者指定位置，或者指定结点中的数据
+public E get(int index)
+返回索引位置的节点中的数据
+public int indexOf(E e)
+查找包含数据e的结点的位置（首次出现）
+public int lastIndexOf(E e)
+查找包含数据e的结点的位置（最后一次出现）
+public E set(int index, E e)
+将指定位置的结点中的数据更新为e，并返回旧数据
+public void addFirst(E e)
+在头部插入一个节点，节点中数据为e
+public void addLast(E e)
+public E removeFirst()
+public E removeLast()
+public int size()   节点个数          
+-public boolean contains(Object e)判断是否含有某一元素。
+public boolean removeFirstOccurrence(Object o)
+移除第一次出现的元素o
+public boolean removeLastOccurrence(Object o)
+移除最后一次出现的元素o
+public Object clone()
+克隆一个链表
+public E getFirst()/getLast()
+返回第一个/最后一个列表元素
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
