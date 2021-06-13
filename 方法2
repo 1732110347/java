@@ -543,7 +543,54 @@ public int indexOf(Object o)
 public E set(int index,E e)
 用指定的元素e替换指定位置index上的元素.
 
+Stack类：采用线性存储结构来存储元素。
+对元素的操作总是在栈顶
+后进先出
+构造方法：
+（1）public Stack()
+Stack<E>
+创建一个空栈。
+常用方法：
+public E push(E item);实现压栈操作
+public E pop();实现弹栈操作。
+public boolean empty();判断堆栈是否还有数据。有返回false无返回true
+public E peek();获取堆栈顶端的数据，但不删除该数据。
+public int search(Object data);获取数据在堆栈中的位置。 不含则返回-1
 
+TreeSet构造方法：
+（1）public TreeSet()
+默认的构造方法，根据添加的元素相互间的大小来排序存放。
+（2）public TreeSet(Collection c)：
+用一个Collection对象来构造，并将该集合的元素添加到TreeSet中。
+（3） public TreeSet(Comparator c) ：
+用指定的比较器，对元素进行排序存放。
+（4） public TreeSet(SortedSet s) ：
+用已排序的s中的所有元素以及比较规则，来构造对象。
+
+TreeSet常用方法：
+public boolean add(E o) 向树集添加加节点。
+public void clear() 删除树集中的所有节点。
+public void contains(Object o) 如果树集中有包含参数指定的对象，该方法返回true，否则返回false 。
+public E first() 返回树集中的第一个节点中的数据（最小的节点）。
+public E last() 返回最后一个节点中的数据（最大的节点）。
+public isEmpty() 判断是否是空树集，如果树集不含任何节点，该方法返回true 。
+public boolean remove(Object o) 删除树集中的存储参数指定的对象的最小节点。
+public int size() 返回树集中节点的数目。
+
+
+
+哈希算法也称为散列算法，是将数据依据算法直接指定（映射）到一个地址上。
+
+HashSet：不允许有重复元素，不对元素排序。
+主要用哈希算法确定元素在集合中的存放位置。
+HashSet常用方法：
+（1）public HashSet()
+默认的构造方法。
+（2）public boolean add(E e)
+添加元素e。
+HashSet集合在用add()方法添加一个新对象时：
+首先会调用equals(Object o)来比较新项和已有的某项是否相等
+若不相等时，会调用对象的hashCode()方法得到对象的散列码，然后根据这个码计算出对象在集合中存储的位置。
 
 在实际使用中，经常需要对无序集合中的元素进行排序、查找元素、随机排序、逆转顺序、旋转移动等操作。
 Java中提供了Collections类来对集合进行常见的操作。
@@ -563,10 +610,55 @@ public static void reverse(List<E> list)
 逆转list中的数据存放顺序。
 
 
+HashMap构造方法：
+public HashMap()
+构造一个具有初始容量(16）和默认加载因子（0.75）的空HashMap。
+public HashMap(int initialCapacity)
+指定初始容量和默认加载因子。
+public HashMap(int initialCapacity, float loadFactor)
+指定初始容量和加 载因子。
+public HashMap(Map m)
+构造一个映射关系与map相同的新HashMap，默认加载因子（0.75）。
+容量表示哈希表中桶的数量，加载因子表示在容量增加之前可以达到多满的一种尺度。
 
 
+HashMap常用方法：
+public V put(K key,V value)
+将键/值对数据存放到散列映射中，返回键所对应的值，key值重复，则会用新的value替换旧的值，并返回旧的值。
+public void clear() 
+清空散列映射。
+public Object clone()  
+返回当前散列映射的一个克隆。
+public boolean containsKey(Object key) 
+散列映射是否包含key指定的键，所在的“键/值” 。 
+public boolean containsValue(Object value) 
+如果散列映射有“键/值”对的值是参数指定的值。
+public V get(Object key) 
+返回散列映射中使用key做键的“键/值”对中的值。
+public boolean isEmpty()  
+如果散列映射不含任何“键/值”对，方法返回true，否则返回false。
+public V remove(Object key) 
+删除散列映射中键为参数指定的“键/值”对，并返回键对应的值。
+public int size() 
+返回散列映射的大小，即散列映射中“键/值”对的数目。
+Set<Map.Entry<K,V>> entrySet()
+返回此HashMap中包含的所有映射对，组成的Set集合。
+Set<K> keySet()
+返回此HashMap中包含的所有的键，组成的Set集合。
+Collection<V> values()
+返回此HashMap中包含的所有的值，组成的Collection集合。 
 
 
+HashMap的遍历：
+（1）先将HashMap对象转换成Collection对象。
+Set<Map.Entry<K,V>> entrySet()
+返回此HashMap中包含的所有映射对，组成的Set集合。
+Set<K> keySet()
+返回此HashMap中包含的所有的键，组成的Set集合。
+Collection<V> values()
+返回此HashMap中包含的所有的值，组成的Collection集合。 
+（2）使用Collection对象的iterator()方法获取迭代器。
+（3）使用迭代器进行遍历。
 
 
 

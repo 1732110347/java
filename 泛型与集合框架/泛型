@@ -222,11 +222,61 @@ public static void reverse(List<E> list)
 逆转list中的数据存放顺序。
 
 
+Map接口：规定了一个存储键值对的集合，提供key（键）到value（值）的映射。
+Map接口和Collection没有继承关系。
+一个元素包含键（Key）和值（Value）两个数据，key值不允许重复。
+实现类有HashMap（乱序）、TreeMap（有序）。
+HashMap类：采用散列表来存储键值对。
 
 
+HashMap构造方法：
+public HashMap()
+构造一个具有初始容量(16）和默认加载因子（0.75）的空HashMap。
+public HashMap(int initialCapacity)
+指定初始容量和默认加载因子。
+public HashMap(int initialCapacity, float loadFactor)
+指定初始容量和加 载因子。
+public HashMap(Map m)
+构造一个映射关系与map相同的新HashMap，默认加载因子（0.75）。
+容量表示哈希表中桶的数量，加载因子表示在容量增加之前可以达到多满的一种尺度。
+
+HashMap常用方法：
+public V put(K key,V value)
+将键/值对数据存放到散列映射中，返回键所对应的值，key值重复，则会用新的value替换旧的值，并返回旧的值。
+public void clear() 
+清空散列映射。
+public Object clone()  
+返回当前散列映射的一个克隆。
+public boolean containsKey(Object key) 
+散列映射是否包含key指定的键，所在的“键/值” 。 
+public boolean containsValue(Object value) 
+如果散列映射有“键/值”对的值是参数指定的值。
+public V get(Object key) 
+返回散列映射中使用key做键的“键/值”对中的值。
+public boolean isEmpty()  
+如果散列映射不含任何“键/值”对，方法返回true，否则返回false。
+public V remove(Object key) 
+删除散列映射中键为参数指定的“键/值”对，并返回键对应的值。
+public int size() 
+返回散列映射的大小，即散列映射中“键/值”对的数目。
+Set<Map.Entry<K,V>> entrySet()
+返回此HashMap中包含的所有映射对，组成的Set集合。
+Set<K> keySet()
+返回此HashMap中包含的所有的键，组成的Set集合。
+Collection<V> values()
+返回此HashMap中包含的所有的值，组成的Collection集合。 
 
 
-
+HashMap的遍历：
+（1）先将HashMap对象转换成Collection对象。
+Set<Map.Entry<K,V>> entrySet()
+返回此HashMap中包含的所有映射对，组成的Set集合。
+Set<K> keySet()
+返回此HashMap中包含的所有的键，组成的Set集合。
+Collection<V> values()
+返回此HashMap中包含的所有的值，组成的Collection集合。 
+（2）使用Collection对象的iterator()方法获取迭代器。
+（3）使用迭代器进行遍历。
 
 
 
