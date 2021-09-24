@@ -23,12 +23,12 @@ File类提供方法，获取文件的属性：
 public String getName() 获取文件的名字。
 public boolean canRead() 判断文件是否是可读的。
 public boolean canWrite() 判断文件是否可被写入。
-public boolean exits() 判断文件是否存在。
+public boolean exists() 判断文件是否存在。
 public long length() 获取文件的长度（单位是字节）。
 public String getAbsolutePath() 获取文件的绝对路径。
 public String getParent() 获取文件的父目录。
 public boolean isFile() 判断文件是否是一个普通文件，而不是目录。
-public boolean isDirectroy() 判断文件是否是一个目录。
+public boolean isDirectory() 判断文件是否是一个目录。
 public boolean isHidden() 判断文件是否是隐藏文件。
 public long lastModified() 获取文件最后修改的时间。
 

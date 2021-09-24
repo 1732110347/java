@@ -5,12 +5,29 @@
 String类是final类不可以有子类
 String类在java.lang包中
 
+JFrame的默认布局管理器是                      。
+
+（5.0分）
+我的答案：
+
+第一空： 
+BorddeLayout
+
+
+JPanel的默认布局管理器是                          。
+
+（5.0分）
+我的答案：
+
+第一空： 
+FlowLayout
 
 
 
+所有事件类的父类是                  。
 
-
-
+第一空： 
+KeyEvent
 
 
 
