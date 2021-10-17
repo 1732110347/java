@@ -385,7 +385,7 @@ void method() {
 
 
 13网络编程
-1．获取Internet上主机的地址  
+1．获取rnet上主机的地址  
 使用InetAddress类的静态方法getByName(String s) 获得一个InetAddress对象。和InterName
 InetAddress address = InetAddress.getByName("www.sina.com.cn");
 String ip=address1.getHostAddress();  转为ip地址
